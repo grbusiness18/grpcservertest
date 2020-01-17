@@ -1,0 +1,16 @@
+syntax = "proto3"; 
+
+message data {
+    string datatype = 1; 
+    string datavalue = 2; 
+}; 
+
+service Hello { 
+ 
+   rpc fnName1 (data) returns (data) {}
+   rpc fnName2 (data) returns (data) {}
+   rpc fnName3 (data) returns (data) {}
+   rpc fnName4 (data) returns (data) {}
+   rpc fnName5 (data) returns (data) {}
+
+};
