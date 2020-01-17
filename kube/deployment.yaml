@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: grpcserver
+  name: grpcserver-deployment
   namespace: gr
   labels:
     app: grrpcserver
@@ -9,14 +9,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: grrpcserver
+      app: grpcserver
   template:
     metadata:
       labels:
         app: grpcserver
     spec:
       containers:
-      - name: grpc-server-test
+      - name: grpcserver
         image: gokulraj18/grpcservertest:latest
         ports:
           - containerPort: 50051
