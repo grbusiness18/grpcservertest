@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: grpcservertest
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: grpcservertest
+    spec:
+      containers:
+      - name: grpc-server-test
+        image: gokulraj18/grpcservertest:latest
+        ports:
+          - containerPort: 50051
