@@ -1,13 +1,19 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gr
+  name: grpcserver
+  namespace: gr
+  labels:
+    app: grrpcserver
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: grrpcserver
   template:
     metadata:
       labels:
-        app: grpcservertest
+        app: grpcserver
     spec:
       containers:
       - name: grpc-server-test
